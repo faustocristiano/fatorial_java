@@ -1,16 +1,11 @@
 import java.util.Scanner;   
 
 public class Fatorial{
-
-    public static void main(String[] args) {        
-
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Digite um numero para calculo do fatorial: ");
-        int fatorial=teclado.nextInt();        
+    public int calc (int fatorial){
         int resultado = fatorial;
 
         if(fatorial==0 || fatorial==1){
-            System.out.println(fatorial + "! = 1");            
+            return 1;            
         }
         if(fatorial<0){
             System.out.println("não existe fatorial de numero negativo");
@@ -19,8 +14,21 @@ public class Fatorial{
                 for(int i=fatorial-1;i>1;i--){
                     resultado=resultado*i;
             }
-        System.out.println(fatorial + "! = " + resultado);
+        }       
+
+        return resultado;
+    }
+
+    public static void main(String[] args) {        
+
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Digite um numero para calculo do fatorial: ");
+        int numero=teclado.nextInt();        
+        
+        Fatorial ex = new Fatorial();
+        int resultado = ex.calc(numero);
+        
+        System.out.println(numero + "! = " + resultado);
         }
     }
 
-}
